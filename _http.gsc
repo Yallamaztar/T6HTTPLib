@@ -30,7 +30,7 @@ httpRequest( method, url, data ) {
 
 writeHttpRequest( request ) {
     json = "{\"id\":\"" + request.id + "\",\"method\":\"" + request.method + "\",\"url\":\"" + request.url + "\",\"data\":\"" + request.data + "\"}";
-    printLn("[ JSON Content ]: " + json);
+    // printLn("[ JSON Content ]: " + json);
     file = fs_fopen("http_request_" + request.id + ".json", "write");
     fs_write(file, json);
     fs_fclose(file);
