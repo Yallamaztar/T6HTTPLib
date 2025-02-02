@@ -10,7 +10,7 @@ init()
     setDvar("scr_allowFileIo", "1");
     level.index = 1; 
 
-    httpRequest("GET", "http://ip-api.com/json/24.48.0.1", "");
+    httpRequest("GET", "http://ip-api.com/json/24.48.0.1", ""); // Example request
 }
 
 httpRequest( method, url, data ) {
