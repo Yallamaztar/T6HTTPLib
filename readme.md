@@ -72,28 +72,29 @@ python t6_http_handler.py
 ## Example
 ### GSC Script
 ```php
-init() {
-    level.index = 0; 
-
-    // Calling the function
-    httpRequest("GET", "https://jsonplaceholder.typicode.com/posts/1", "");
+init()
+{
+    httpRequest("GET", "http://ip-api.com/json/24.48.0.1", ""); // Example request
+    /* 
+    * [ Response ]:
+    *   "{\
+    *       "status\":\"success\",\
+    *       "country\":\"Canada\",\
+    *       "countryCode\":\"CA\",\
+    *       "region\":\"QC\",\
+    *       "regionName\":\"Quebec\",\
+    *       "city\":\"Montreal\",\
+    *       "zip\":\"H1K\",\
+    *       "lat\":45.6085,\
+    *       "lon\":-73.5493,\
+    *       "timezone\":\"America/Toronto\",\
+    *       "isp\":\"Le Groupe Videotron Ltee\",\
+    *       "org\":\"Videotron Ltee\",\
+    *       "as\":\"AS5769 Videotron Ltee\",\
+    *       "query\":\"24.48.0.1\"
+    *   }"
+    */
 }
-
-httpRequest( method, url, data ) {
-    if (!isDefined( method ) || !isDefined( url )) {
-        PrintLn( "HTTP Request Error: Missing required parameters" );
-        return;
-    }
-
-    request = SpawnStruct();
-    request.id       = "[T6HTTPREQ" + level.index + "]";
-    request.method   = method;
-    request.url      = url;
-    request.data     = isDefined(data) ? data : "";
-
-    thread writeHttpRequest( request );
-}
-
 ```
 
 ---
