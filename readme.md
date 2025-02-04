@@ -74,7 +74,7 @@ python t6_http_handler.py
 ```php
 init()
 {
-    httpRequest("GET", "http://ip-api.com/json/24.48.0.1", ""); // Example request
+    thread httpRequest("GET", "http://ip-api.com/json/24.48.0.1", ""); // Example request
     /* 
     * [ Response ]:
     *   "{\
