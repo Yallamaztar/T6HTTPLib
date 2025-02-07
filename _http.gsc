@@ -12,7 +12,7 @@ init()
     level.index = 1; 
 
     // Example request
-    req = httpRequest("GET", "http://ip-api.com/json/24.48.0.1", "", true);  // httpRequest(METHOD: str, url: str, data: str, debug: bool)
+    req = httpRequest("GET", "http://ip-api.com/json/24.48.0.1", "", true);  // httpRequest(METHOD: str, url: str, data: Optional[str], debug: Optional[bool])
 }
 
 httpRequest( method, url, data, debug ) {
