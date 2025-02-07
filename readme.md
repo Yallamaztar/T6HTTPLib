@@ -40,8 +40,8 @@ A library for handling HTTP requests in **Plutonium T6 (Black Ops II)**
 ### GSC Script
 To send an HTTP request from the game, call the `httpRequest` function:
 ```php
-thread httpRequest("GET", "https://example.com", "");
-thread httpRequest("POST", "https://example.com", "param1=value1&param2=value2");
+thread httpRequest("GET", "https://example.com", "", true);
+thread httpRequest("POST", "https://example.com", "param1=value1&param2=value2"); 
 ```
 
 ---
