@@ -2,7 +2,7 @@
 *  HTTP Library For Plutonium T6 (Black Ops II)
 *  Author:  Budiworld
 *  GitHub:  https://github.com/Yallamaztar/T6HttpLibrary
-*  Version: 0.1
+*  Version: 0.3
 */ 
 
 init()
@@ -10,12 +10,9 @@ init()
     setDvar("sv_cheats", "1");
     setDvar("scr_allowFileIo", "1");
     level.index = 1; 
-    /* 
-    * httpRequest(METHOD: str, url: str, debug: bool)
-    */
+
     // Example request
-    req = httpRequest("GET", "http://ip-api.com/json/24.48.0.1"); 
-    PrintLn(req);
+    req = httpRequest("GET", "http://ip-api.com/json/24.48.0.1", "", true);  // httpRequest(METHOD: str, url: str, data: str, debug: bool)
 }
 
 httpRequest( method, url, data, debug ) {
@@ -61,7 +58,7 @@ readHttpResponse( request ) {
     if (request.debug == true) {
         PrintLn("[ Response ]: " + response);
     } else {
-        PrintLn("niggerrr")
+        PrintLn("niggerrr");
     }
     
     return response;
