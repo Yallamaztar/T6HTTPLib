@@ -58,11 +58,11 @@ python t6_http_handler.py
 ## How It Works
 - ### The GSC script logs HTTP requests in the following format:
 ```jsx
-[T6HTTPREQ<ID>]: {"ID":"T6HTTPREQ<ID>","method":"<METHOD>","url":"<URL>","data":"<DATA>"} 
+[T6HTTPREQ<ID>]: {"ID":"T6HTTPREQ<ID>","method":"<METHOD>","url":"<URL>","data":"<DATA>","debug":true} 
 ```
 - ### Example:
 ```jsx
-[T6HTTPREQ1]: {"ID":"T6HTTPREQ512","method":"GET","url":"https://example.com","data":""}
+[T6HTTPREQ512]: {"ID":"T6HTTPREQ512","method":"GET","url":"https://example.com","data":"","debug":true} 
 ```
 -  The Python script monitors the log for these entries, parses them, and executes the HTTP requests
 -  The Python script ensures each request is processed only once by tracking unique request IDs
@@ -74,7 +74,7 @@ python t6_http_handler.py
 ```php
 init()
 {
-    thread httpRequest("GET", "http://ip-api.com/json/24.48.0.1", ""); // Example request
+    thread httpRequest("GET", "http://ip-api.com/json/24.48.0.1", "", true); // Example request
     /* 
     * [ Response ]:
     *   "{\
