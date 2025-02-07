@@ -7,13 +7,18 @@
 
 init()
 {
+    setDvar("sv_cheats", "1");
     setDvar("scr_allowFileIo", "1");
     level.index = 1; 
-
-    // httpRequest("GET", "http://ip-api.com/json/24.48.0.1", ""); Example request
+    /* 
+    * httpRequest(METHOD: str, url: str, debug: bool)
+    */
+    // Example request
+    req = httpRequest("GET", "http://ip-api.com/json/24.48.0.1"); 
+    PrintLn(req);
 }
 
-httpRequest( method, url, data ) {
+httpRequest( method, url, data, debug ) {
     if (!isDefined( method ) || !isDefined( url )) {
         PrintLn( "HTTP Request Error: Missing required parameters" );
         return;
@@ -24,6 +29,7 @@ httpRequest( method, url, data ) {
     request.method   = method;
     request.url      = url;
     request.data     = isDefined(data) ? data : "";
+    request.debug    = isDefined(debug) ? debug : false;
 
     thread writeHttpRequest( request );
 }
@@ -52,5 +58,11 @@ readHttpResponse( request ) {
     fs_fclose(file);
     fs_remove(reqFile);
 
-    PrintLn("[ Response ]: " + response);
+    if (request.debug == true) {
+        PrintLn("[ Response ]: " + response);
+    } else {
+        PrintLn("niggerrr")
+    }
+    
+    return response;
 }
