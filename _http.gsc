@@ -57,8 +57,6 @@ readHttpResponse( request ) {
 
     if (request.debug == true) {
         PrintLn("[ Response ]: " + response);
-    } else {
-        PrintLn("niggerrr");
     }
     
     return response;
