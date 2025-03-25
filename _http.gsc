@@ -7,7 +7,6 @@
 
 init()
 {
-    setDvar("sv_cheats", "1");
     setDvar("scr_allowFileIo", "1");
     level.index = 1; 
 
